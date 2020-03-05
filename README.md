@@ -20,11 +20,11 @@ Script a program for loading the json data source(s) in s3 bucket to a table(s) 
 2. Created another notebook, **LL_Download_Transform_Upload**, to download, transform and upload the data in batches. The step wise process in the notebook is detailed below:     
      i) Downloads batches of 20 files from S3 bucket. Batch size can be changed to optimize the process 
      ii)Performs several steps to transform the raw data into a format that can be easily queried for further analysis.
-        - Converts json files to dataframe using ensuring each key in the nested dictionaries is a separate column    
-        - Change date format
-        - Drops repetitive column `User.Key`
-        - Extracts data from list columns as comma separated strings 
-        - Renames columns to ensure names are compliant with the Redshift column naming conventions.  
-    iii)Upload the processed dataframe to a separate S3 bucket in csv format   
-    iV) Append the processed S3 file to Redshift table
+        - Converts json files to dataframe using ensuring each key in the nested dictionaries is a separate column.       
+        - Change date format. 
+        - Drops repetitive column `User.Key`. 
+        - Extracts data from list columns as comma separated strings.  
+        - Renames columns to ensure names are compliant with the Redshift column naming conventions.   
+    iii)Upload the processed dataframe to a separate S3 bucket in csv format.    
+    iv) Append the processed S3 file to Redshift table. 
 3. Delete the processed file from S3 (save on storage space)
