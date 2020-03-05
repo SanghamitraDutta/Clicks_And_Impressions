@@ -16,8 +16,8 @@ Script a program for loading the json data source(s) in s3 bucket to a table(s) 
   
 ### My stepwise appoach to the task:
 
-1. Prepared a notebook to create 2 tables in Resdhift DB, **clicks** and **impressions**. The data from json files in S3 bucket would be uploaded into these tables. The **Create_Redshift_Tables.ipynb** notebook is kept separate from the rest of the process as it needs to be run only once   
-2. Created another notebook, **LL_Download_Transform_Upload.ipynb**, to download, transform and upload the data in batches. The step wise process in the notebook is detailed below:         
+1. Prepared a notebook to create 2 tables in Resdhift DB, **clicks** and **impressions**. The data from json files in S3 bucket would be uploaded into these tables. The **1.Create_Redshift_Tables.ipynb** notebook is kept separate from the rest of the process as it needs to be run only once   
+2. Created another notebook, **2.LL_Download_Transform_Upload.ipynb**, to download, transform and upload the data in batches. The step wise process in the notebook is detailed below:         
      i)  Downloads batches of 20 files from S3 bucket. Batch size can be changed to optimize the process.        
      ii) Performs several steps to transform the raw data into a format that can be easily queried for further analysis.     
            - Converts json files to dataframe and ensures each key in the nested dictionaries is a separate column.           
@@ -31,6 +31,6 @@ Script a program for loading the json data source(s) in s3 bucket to a table(s) 
    
      
 ### Instructions to run the files in this repo:      
-1. Enter the Redshift credentials in the notebook **Create_Redshift_Tables.ipynb**. Run the notebook to create 2 tables in Redshift.    
-2. In the notebook **LL_Download_Transform_Upload.ipynb**, enter the Redshift credentials along with the path to a new S3 bucket for storing the processed files temproraily. Run the notebook. It will download json files from S3, process the raw data, upload processed file to S3 and then copy them to Redshift tables.  
+1. Enter the Redshift credentials in the notebook **1.Create_Redshift_Tables.ipynb**. Run the notebook to create 2 tables in Redshift.    
+2. In the notebook **2.LL_Download_Transform_Upload.ipynb**, enter the Redshift credentials along with the path to a new S3 bucket for storing the processed files temproraily. Run the notebook. It will download json files from S3, process the raw data, upload processed file to S3 and then copy them to Redshift tables.  
    
