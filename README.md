@@ -28,3 +28,9 @@ Script a program for loading the json data source(s) in s3 bucket to a table(s) 
     iii) Upload the processed dataframe to a separate S3 bucket in csv format.      
     iv)  Copy the processed S3 file to Redshift table.    
 3. Delete the processed file from S3 to free up storage space.
+   
+     
+### Instructions to run the repo:    
+1. Enter the Redshift credentials in the notebook **Create_Redshift_Tables.ipynb**. Run the notebook to create 2 tables in Redshift.    
+2. Enter the Redshift credentials along with the path to a new S3 bucket for storing the processed files temproraily. Run the file to file to download json files from S3, process the raw data, upload processed file to S3 and then copy to Redshift tables.  
+ 
