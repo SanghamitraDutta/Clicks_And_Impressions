@@ -16,8 +16,8 @@ Script a program for loading the json data source(s) in s3 bucket to a table(s) 
 ### My stepwise appoach  to the task:
 
 1. Prepared a notebook to create 2 tables in Resdhift DB, **clicks** and **impressions**. The data from json files in S3 bucket would be uploaded into these tables. The **Create_Redshift_Tables.ipynb** notebook is kept separate from the rest of the process as it needs to be run only once   
-2. Created another notebook to download, transform and upload the data 
-   i) Downloaded batches of 20 files from S3 bucket (batch size can be changed to optimize the process)
+2. Created another notebook to download, transform and upload the data   
+     i) Downloaded batches of 20 files from S3 bucket (batch size can be changed to optimize the process)
 3. Process the files (convert to dataframe, change date format, drop repetitive columns)
 3. Upload the dataframe to S3 bucket in csv format
 4. Append the processed S3 file to Redshift table
