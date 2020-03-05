@@ -27,4 +27,4 @@ Script a program for loading the json data source(s) in s3 bucket to a table(s) 
            - Renames columns to ensure names are compliant with the Redshift column naming conventions.      
     iii) Upload the processed dataframe to a separate S3 bucket in csv format.      
     iv)  Append the processed S3 file to Redshift table.   
-3. Delete the processed file from S3 (save on storage space)
+3. Delete the processed file from S3. This is to free up storage space.
