@@ -13,7 +13,7 @@ Script a program for loading the json data source(s) in s3 bucket to a table(s) 
 5. Uploading the data to the Redshift table would require the data to be transfered in chunks as new files are received in the S3 bucket continuously at intervals of every few minutes
 6. As direct uploading of the pandas dataframe to Redhift tables takes longer, the dataframe first needs to be uploaded to a separate S3 bucket and then copied from S3 into Redshift
 
-
+  
 ### My stepwise appoach  to the task:
 
 1. Prepared a notebook to create 2 tables in Resdhift DB, **clicks** and **impressions**. The data from json files in S3 bucket would be uploaded into these tables. The **Create_Redshift_Tables.ipynb** notebook is kept separate from the rest of the process as it needs to be run only once   
